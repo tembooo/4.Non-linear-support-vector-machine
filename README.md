@@ -54,6 +54,7 @@ If the result is positive, classify it as Class 1; if negative, Class 2.
 
 Use the support vectors from Class 1 to help determine the decision boundary when computing the classification scores.
 
+![image](https://github.com/user-attachments/assets/243639a0-426e-4fa4-aeb1-dedad42ffe85)
 
 
 ```python
