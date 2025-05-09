@@ -1,5 +1,59 @@
 # 4.Non-linear-support-vector-machine
 Non-linear support vector machine
+![image](https://github.com/user-attachments/assets/45c60ceb-8f7d-49e6-b0ae-22c0c549d529)
+## 🌐 Nonlinear Support Vector Machine (SVM) – Kernel-Based Implementation
+
+In this task, we implement a nonlinear support vector machine (SVM) in either Matlab or Python.  
+The classifier uses a second-order polynomial kernel function to perform classification on a 2D dataset.
+
+The function you need to implement receives:
+- training data
+- training class labels
+- test data
+- and a penalty parameter C
+
+It returns the predicted class labels for the test set.
+
+<br>
+
+The dataset contains predefined support vectors for each class.
+
+📁 Additional files: CSV, MAT, and implementation templates are provided in both .m and .py/.ipynb formats.
+
+---
+
+### 💡 Hints
+
+---
+
+### 1. Kernel Handling
+
+Instead of using simple dot products in matrix computations, you should apply a polynomial kernel function.  
+This kernel replaces the inner product when building the matrix used for quadratic programming.  
+Whether you're using `quadprog` in Matlab or `cvxopt` in Python, always apply the kernel function wherever inner products appear.
+
+---
+
+### 2. Optimisation
+
+The optimisation step is the same as in the linear SVM implementation.  
+Use the same solver setup and solve for the Lagrange multipliers using quadratic programming.  
+The only difference is that the kernel function now replaces the dot product in your H matrix.
+
+---
+
+### 3. Classification of Test Data
+
+Once you have computed the multipliers and identified the support vectors, you can classify test points.  
+This is done by evaluating a discriminant function for each test sample.  
+The function relies on comparing the result to a threshold (typically 0) to decide which class to assign.  
+You should loop through the support vectors and compute a score for each test point using the kernel.  
+If the result is positive, classify it as Class 1; if negative, Class 2.
+
+<br>
+
+Use the support vectors from Class 1 to help determine the decision boundary when computing the classification scores.
+
 
 
 ```python
